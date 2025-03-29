@@ -1,0 +1,11 @@
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\bin\Debug\net8.0\SupabaseService.deps.json
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\bin\Debug\net8.0\SupabaseService.dll
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\bin\Debug\net8.0\SupabaseService.pdb
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\obj\Debug\net8.0\SupabaseService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\obj\Debug\net8.0\SupabaseService.AssemblyInfoInputs.cache
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\obj\Debug\net8.0\SupabaseService.AssemblyInfo.cs
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\obj\Debug\net8.0\SupabaseService.csproj.CoreCompileInputs.cache
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\obj\Debug\net8.0\SupabaseService.dll
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\obj\Debug\net8.0\refint\SupabaseService.dll
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\obj\Debug\net8.0\SupabaseService.pdb
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\SupabaseService\obj\Debug\net8.0\ref\SupabaseService.dll

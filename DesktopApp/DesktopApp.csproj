@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Assets\Icons\logo.ico" />
+      <Resource Include="Assets\Icons\logo.ico" />
+      <None Remove="Assets\Images\sign_in_img.png" />
+      <Resource Include="Assets\Images\sign_in_img_x4.png" />
+      <None Remove="Assets\Images\sign_in_img_x1.png" />
+      <Resource Include="Assets\Images\sign_in_img_x1.png" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-Black.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-Black.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-BlackItalic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-BlackItalic.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-Bold.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-Bold.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-BoldItalic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-BoldItalic.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-ExtraBold.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-ExtraBold.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-ExtraBoldItalic.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-ExtraLight.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-ExtraLight.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-ExtraLightItalic.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-Italic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-Italic.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-Light.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-Light.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-LightItalic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-LightItalic.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-Medium.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-Medium.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-MediumItalic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-MediumItalic.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-Regular.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-Regular.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-SemiBold.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-SemiBold.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-SemiBoldItalic.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-Thin.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-Thin.ttf" />
+      <None Remove="Assets\Fonts\Poppins\Poppins-ThinItalic.ttf" />
+      <Resource Include="Assets\Fonts\Poppins\Poppins-ThinItalic.ttf" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Assets\Fonts\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MaterialDesignThemes" Version="5.2.2-ci942" />
+    </ItemGroup>
+
+</Project>
