@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\DesktopApp\App.xaml
-4-116495138
+5-261090465
 
-6-25437490
+7-1420248428
 201-1199134039
-Assets\Fonts\Poppins\Fonts.xaml;MainWindow.xaml;Pages\SignInPage.xaml;Pages\SignUpPage.xaml;
+Assets\Fonts\Poppins\Fonts.xaml;MainWindow.xaml;Pages\HomePage.xaml;Pages\SignInPage.xaml;Pages\SignUpPage.xaml;
 
 False
 
