@@ -9,9 +9,6 @@
 //------------------------------------------------------------------------------
 
 using DesktopApp;
-using MaterialDesignThemes.Wpf;
-using MaterialDesignThemes.Wpf.Converters;
-using MaterialDesignThemes.Wpf.Transitions;
 using System;
 using System.Diagnostics;
 using System.Windows;
