@@ -4,7 +4,6 @@
                   xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                   xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                   xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                  xmlns:local="clr-namespace:DesktopApp.Pages"
                   mc:Ignorable="d"
                   MinHeight="450" MinWidth="800">
                 <Grid>
@@ -18,22 +17,26 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" MinWidth="400" MaxWidth="640" Margin="50 0 50 0">
-                        <TextBlock Text="Get Started Now" FontSize="32" FontWeight="Medium" FontFamily="{StaticResource Poppins}"/>
-                        <TextBlock Text="Name"  FontSize="14" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Margin="0 50 0 5"/>
-                        <TextBox FontSize="12" FontWeight="Regular" FontFamily="{StaticResource Poppins}" 
-                                 Style="{StaticResource MaterialDesignOutlinedTextBox}" 
-                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10" Padding="10 10 0 10"/>
-                        <TextBlock Text="Email address" FontSize="14" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Margin="0 30 0 5"/>
+                        <TextBlock Text="Welcome back!" FontSize="32" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Margin="0 0 0 5"/>
+                        <TextBlock Text="Enter your Credentials to access your account" FontSize="16" FontWeight="Medium" FontFamily="{StaticResource Poppins}"/>
+                        <TextBlock Text="Email address" FontSize="14" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Margin="0 50 0 5"/>
                         <TextBox FontSize="12" FontWeight="Regular" FontFamily="{StaticResource Poppins}" 
                                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
                                  materialDesign:TextFieldAssist.TextFieldCornerRadius="10" Padding="10 10 0 10"/>
-                        <TextBlock Text="Password" FontSize="14" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Margin="0 30 0 5"/>
-                        <PasswordBox FontSize="12" FontWeight="Regular" FontFamily="{StaticResource Poppins}" 
+                        <TextBlock Text="Password" FontSize="14" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Margin="0 40 0 5"/>
+                        <PasswordBox FontSize="12" FontWeight="Regular" FontFamily="{StaticResource Poppins}" Margin="0 0 0 20"
                                      Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
                                      materialDesign:TextFieldAssist.TextFieldCornerRadius="10" Padding="10 10 0 10"/>
-                        <Button Content="Signup" Background="#3A5B22" Foreground="White"  FontSize="13" FontWeight="Bold" FontFamily="{StaticResource Poppins}"
-                                Margin="0 30 0 0" Height="40" materialDesign:ButtonAssist.CornerRadius="10" 
+                        <Button Content="Login" Background="#3A5B22" Foreground="White"  FontSize="14" FontWeight="Bold" FontFamily="{StaticResource Poppins}"
+                                Margin="0 30 0 40" Height="50" materialDesign:ButtonAssist.CornerRadius="10" 
                                 Style="{StaticResource MaterialDesignRaisedButton}" BorderThickness="0" materialDesign:ElevationAssist.Elevation="Dp0"/>
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0 30 0 0">
+                            <TextBlock FontSize="14" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Text = "Have an Account?"/>
+                            <Button Content="Sign Up" Background="Transparent" Foreground="#3A5B22"  FontSize="14" FontWeight="Bold" FontFamily="{StaticResource Poppins}"
+                                    Margin="0 5 0 0"
+                                    Style="{StaticResource MaterialDesignFlatButton}"
+                                    Click="OnSignUpNavigationClick"/>
+                        </StackPanel>
                     </StackPanel>
                     <Image Grid.Row="0" Grid.Column="1" Grid.RowSpan="3" Stretch="UniformToFill" Source="../Assets/Images/sign_in_img_x1.png"/>
                 </Grid>

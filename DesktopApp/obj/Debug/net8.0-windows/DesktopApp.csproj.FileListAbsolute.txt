@@ -29,3 +29,4 @@ C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\DesktopApp\bin\Debug\n
 C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\DesktopApp\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\DesktopApp\obj\Debug\net8.0-windows\DesktopApp.csproj.AssemblyReference.cache
 C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\DesktopApp\obj\Debug\net8.0-windows\DesktopApp.csproj.Up2Date
+C:\Users\lysenko_v\RiderProjects\DesktopApplicationWithDB\DesktopApp\obj\Debug\net8.0-windows\DesktopApp.sourcelink.json

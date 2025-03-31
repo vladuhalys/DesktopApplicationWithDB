@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SupabaseService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95ca42fa1558aa99462e4816d94fd154bff87b64")]
 [assembly: System.Reflection.AssemblyProductAttribute("SupabaseService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SupabaseService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
