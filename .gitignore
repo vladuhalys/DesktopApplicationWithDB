@@ -3,6 +3,7 @@
 .vs/
 *.sln.iml
 *.env
+global.json
 
 # User-specific files
 *.rsuser
