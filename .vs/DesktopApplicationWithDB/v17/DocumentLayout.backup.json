@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\lysenko_v\\RiderProjects\\DesktopApplicationWithDB\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{567E975A-B5DF-4AA6-B72D-7E5B972D3A2D}|DesktopApp\\DesktopApp.csproj|c:\\users\\lysenko_v\\riderprojects\\desktopapplicationwithdb\\desktopapp\\desktopapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{567E975A-B5DF-4AA6-B72D-7E5B972D3A2D}|DesktopApp\\DesktopApp.csproj|solutionrelative:desktopapp\\desktopapp.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DesktopApp",
+              "DocumentMoniker": "C:\\Users\\lysenko_v\\RiderProjects\\DesktopApplicationWithDB\\DesktopApp\\DesktopApp.csproj",
+              "RelativeDocumentMoniker": "DesktopApp\\DesktopApp.csproj",
+              "ToolTip": "C:\\Users\\lysenko_v\\RiderProjects\\DesktopApplicationWithDB\\DesktopApp\\DesktopApp.csproj",
+              "RelativeToolTip": "DesktopApp\\DesktopApp.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-31T17:42:22.971Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
