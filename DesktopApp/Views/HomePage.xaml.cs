@@ -1,7 +1,8 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using DesktopApp.Interfaces;
 
-namespace DesktopApp.Pages;
+namespace DesktopApp.Views;
 
 public partial class HomePage : UserControl
 {

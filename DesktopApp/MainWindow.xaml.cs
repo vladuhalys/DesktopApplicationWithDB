@@ -1,15 +1,13 @@
 ﻿using System.Windows;
-using DesktopApp.Pages;
+using DesktopApp.Views;
 
 namespace DesktopApp;
 
 public partial class MainWindow : Window
 {
-    public MainWindow()
+    public MainWindow(SignInPage signInPage)
     {
         InitializeComponent();
-        //TODO: Rework this to DI MVVM
-        //Example: https://medium.com/@shalahuddinshanto/dependency-injection-in-wpf-a-complete-implementation-guide-468abcf95337
-        this.Content = new SignInPage();
+        this.Content = signInPage;
     }
 }

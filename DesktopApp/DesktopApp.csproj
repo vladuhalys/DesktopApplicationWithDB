@@ -59,11 +59,18 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
       <PackageReference Include="MaterialDesignThemes" Version="5.2.2-ci942" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.4" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.4" />
     </ItemGroup>
 
     <ItemGroup>
       <SplashScreen Include="Assets\Images\SplashImage.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\SupabaseService\SupabaseService.csproj" />
     </ItemGroup>
 
 </Project>
