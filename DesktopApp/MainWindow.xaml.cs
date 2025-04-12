@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using DesktopApp.Interfaces;
+using DesktopApp.ViewModels;
 using DesktopApp.Views;
 
 namespace DesktopApp;
@@ -14,7 +14,9 @@ public partial class MainWindow : Window
         InitializeComponent();
         _navigationService = navigationService;
         _navigationService.OnNavigate += SetContent;
-        _navigationService.NavigateTo(new SignInPage(_navigationService));
+
+        // Navigate to the initial page
+        _navigationService.NavigateTo<SignInPage, SignInViewModel>();
     }
 
     private void SetContent(UserControl content)

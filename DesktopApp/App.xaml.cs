@@ -31,20 +31,21 @@ public partial class App : Application
         // Configure Logging
         services.AddLogging();
         
-        // Register Services
+        // Register NavigationService
         services.AddSingleton<NavigationService>();
-        services.AddSingleton<ISupabaseService, SupabaseService>();
-        services.AddSingleton<IAuthService, AuthService>();
-        
+
         // Register ViewModels
         services.AddSingleton<SignInViewModel>();
         services.AddSingleton<SignUpViewModel>();
+        services.AddSingleton<HomeViewModel>();
 
         // Register Views
         services.AddSingleton<SignInPage>();
         services.AddSingleton<SignUpPage>();
+        services.AddSingleton<HomePage>();
+
+        // Register MainWindow
         services.AddSingleton<MainWindow>();
-       
     }
 
     private void OnExit(object sender, ExitEventArgs e)

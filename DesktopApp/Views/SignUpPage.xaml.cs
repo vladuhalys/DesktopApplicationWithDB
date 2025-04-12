@@ -8,15 +8,15 @@ public partial class SignUpPage : UserControl
 {
     private readonly NavigationService _navigationService;
     
-    public SignUpPage(NavigationService navigationService)
+    public SignUpPage(NavigationService navigationService, SignUpViewModel viewModel)
     {
         InitializeComponent();
+        DataContext = viewModel;
         _navigationService = navigationService;
     }
     
     private void OnSignInNavigationClick(object sender, RoutedEventArgs e)
     {
-        var signInPage = new SignInPage(_navigationService);
-        _navigationService.NavigateTo(signInPage);
+        _navigationService.NavigateTo<SignInPage, SignInViewModel>();
     }
 }

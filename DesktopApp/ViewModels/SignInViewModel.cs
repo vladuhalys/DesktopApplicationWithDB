@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Windows.Forms;
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.Logging;
 
@@ -18,6 +19,7 @@ public class SignInViewModel
     private Task OnSignIn()
     {
         //TODO: Implement the sign-in logic here
+        MessageBox.Show("Sign-in logic not implemented yet.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         _logger.LogInformation($"SignInCommand executed [{DateTime.Now.ToLocalTime()}]");
         return Task.CompletedTask;
     }
