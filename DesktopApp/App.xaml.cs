@@ -27,33 +27,24 @@ public partial class App : Application
 
     private void ConfigureServices(IServiceCollection services)
     {
+        
         // Configure Logging
         services.AddLogging();
-
+        
         // Register Services
-        services.AddSingleton<INavigationService, NavigationService>();
+        services.AddSingleton<NavigationService>();
         services.AddSingleton<ISupabaseService, SupabaseService>();
         services.AddSingleton<IAuthService, AuthService>();
         
         // Register ViewModels
         services.AddSingleton<SignInViewModel>();
         services.AddSingleton<SignUpViewModel>();
-        services.AddSingleton<HomeViewModel>();
 
         // Register Views
-        //TODO: Fix the issue with the NavigationService
-        services.AddSingleton<SignInPage>(provider =>
-            new SignInPage(
-                provider.GetRequiredService<SignInViewModel>(),
-                provider.GetRequiredService<NavigationService>()));
-
-        services.AddSingleton<SignUpPage>(provider =>
-            new SignUpPage(
-                provider.GetRequiredService<SignUpViewModel>(),
-                provider.GetRequiredService<NavigationService>()));
-        
-        services.AddSingleton<HomePage>();
+        services.AddSingleton<SignInPage>();
+        services.AddSingleton<SignUpPage>();
         services.AddSingleton<MainWindow>();
+       
     }
 
     private void OnExit(object sender, ExitEventArgs e)

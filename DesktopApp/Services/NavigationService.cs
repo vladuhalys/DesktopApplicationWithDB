@@ -2,22 +2,12 @@
 using DesktopApp.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DesktopApp.Services;
-
-public class NavigationService : INavigationService
+public class NavigationService
 {
-    private readonly IServiceProvider _serviceProvider;
-    private readonly MainWindow _mainWindow;
+    public event Action<UserControl>? OnNavigate;
 
-    public NavigationService(IServiceProvider serviceProvider, MainWindow mainWindow)
+    public void NavigateTo(UserControl view)
     {
-        _serviceProvider = serviceProvider;
-        _mainWindow = mainWindow;
-    }
-
-    public void NavigateTo<TView>() where TView : UserControl
-    {
-        var view = _serviceProvider.GetRequiredService<TView>();
-        _mainWindow.Content = view;
+        OnNavigate?.Invoke(view);
     }
 }

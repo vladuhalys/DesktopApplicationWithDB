@@ -1,22 +1,22 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using DesktopApp.Interfaces;
 using DesktopApp.ViewModels;
 
 namespace DesktopApp.Views;
 
-public partial class SignUpPage
+public partial class SignUpPage : UserControl
 {
-    private readonly INavigationService _navigationService;
-
-    public SignUpPage(SignUpViewModel viewModel, INavigationService navigationService)
+    private readonly NavigationService _navigationService;
+    
+    public SignUpPage(NavigationService navigationService)
     {
-        this.DataContext = viewModel;
+        InitializeComponent();
         _navigationService = navigationService;
     }
-
+    
     private void OnSignInNavigationClick(object sender, RoutedEventArgs e)
     {
-        _navigationService.NavigateTo<SignInPage>();
+        var signInPage = new SignInPage(_navigationService);
+        _navigationService.NavigateTo(signInPage);
     }
 }
