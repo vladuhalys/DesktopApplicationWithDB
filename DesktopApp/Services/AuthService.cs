@@ -7,8 +7,22 @@
             public class AuthService(SupabaseRepository repository) : INotifyPropertyChanged
             {
                 private bool _isLoggedIn = repository.IsLoggedIn;
+                private bool _isRegisteredSuccessfully = false;
         
                 public event PropertyChangedEventHandler? PropertyChanged;
+                
+                public bool IsRegisteredSuccessfully
+                {
+                    get => _isRegisteredSuccessfully;
+                    set
+                    {
+                        if (_isRegisteredSuccessfully != value)
+                        {
+                            _isRegisteredSuccessfully = value;
+                            OnPropertyChanged("IsRegisteredSuccessfully");
+                        }
+                    }
+                }
 
                 public bool IsLoggedIn
                 {
@@ -30,9 +44,10 @@
                     IsLoggedIn = repository.IsLoggedIn;
                 }
 
-                public Task<bool> Register(string username, string password)
+                public async void Register(string email, string password)
                 {
-                    throw new NotImplementedException();
+                    await repository.Register(email, password);
+                    IsRegisteredSuccessfully = true;
                 }
 
                 public async void Logout()

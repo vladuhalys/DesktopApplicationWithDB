@@ -28,8 +28,13 @@ public partial class MainWindow : Window
         {
             _navigationService.NavigateTo<HomePage, HomeViewModel>();
         }
-        else if (e.PropertyName == nameof(AuthService.IsLoggedIn) && !_authService.IsLoggedIn)
+        if (e.PropertyName == nameof(AuthService.IsLoggedIn) && !_authService.IsLoggedIn)
         {
+            _navigationService.NavigateTo<SignInPage, SignInViewModel>();
+        }
+        if (e.PropertyName == nameof(AuthService.IsRegisteredSuccessfully) && _authService.IsRegisteredSuccessfully)
+        {
+            _authService.IsRegisteredSuccessfully = false;
             _navigationService.NavigateTo<SignInPage, SignInViewModel>();
         }
     }

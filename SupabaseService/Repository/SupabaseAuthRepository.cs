@@ -13,9 +13,9 @@ public partial class SupabaseRepository
         await CloudeDatabase?.SupabeseClient.Auth.SignIn(username, password)!;
     }
     
-    public async Task<bool> Register(string username, string password)
+    public async Task Register(string email, string password)
     {
-        throw new NotImplementedException();
+        await CloudeDatabase?.SupabeseClient.Auth.SignUp(email, password)!;
     }
     
     public async Task Logout()
