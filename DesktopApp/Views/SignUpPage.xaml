@@ -25,6 +25,7 @@
                                  materialDesign:HintAssist.IsFloating="False"
                                  BorderBrush="#D9D9D9"
                                  materialDesign:HintAssist.HintOpacity="0.4"
+                                 Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource MaterialDesignOutlinedTextBox}" 
                                  materialDesign:TextFieldAssist.TextFieldCornerRadius="10" Padding="10 10 0 10"/>
                         <TextBlock Text="Email address" FontSize="14" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Margin="0 30 0 5"/>
@@ -33,6 +34,7 @@
                                  materialDesign:HintAssist.IsFloating="False"
                                  BorderBrush="#D9D9D9"
                                  materialDesign:HintAssist.HintOpacity="0.4"
+                                 Text="{Binding Email, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                  Style="{StaticResource MaterialDesignOutlinedTextBox}"
                                  materialDesign:TextFieldAssist.TextFieldCornerRadius="10" Padding="10 10 0 10"/>
                         <TextBlock Text="Password" FontSize="14" FontWeight="Medium" FontFamily="{StaticResource Poppins}" Margin="0 30 0 5"/>
@@ -42,9 +44,11 @@
                                      BorderBrush="#D9D9D9"
                                      materialDesign:HintAssist.HintOpacity="0.4"
                                      Style="{StaticResource MaterialDesignOutlinedPasswordBox}"
+                                     materialDesign:PasswordBoxAssist.Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                                      materialDesign:TextFieldAssist.TextFieldCornerRadius="10" Padding="10 10 0 10"/>
                         <Button Content="Signup" Background="#3A5B22" Foreground="White"  FontSize="14" FontWeight="Bold" FontFamily="{StaticResource Poppins}"
                                 Margin="0 40 0 40" Height="50" materialDesign:ButtonAssist.CornerRadius="10" 
+                                Command="{Binding SignUpCommand}"
                                 Style="{StaticResource MaterialDesignRaisedButton}" BorderThickness="0" materialDesign:ElevationAssist.Elevation="Dp0"/>
                         <CheckBox >
                             <CheckBox.Content>
