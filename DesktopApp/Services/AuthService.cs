@@ -38,19 +38,19 @@
                 }
         
                 // Login method that updates IsLoggedIn
-                public async void Login(string email, string password)
+                public async Task Login(string email, string password)
                 {
                     await repository.Login(email, password);
                     IsLoggedIn = repository.IsLoggedIn;
                 }
 
-                public async void Register(string email, string password)
+                public async Task Register(string email, string password)
                 {
                     await repository.Register(email, password);
                     IsRegisteredSuccessfully = true;
                 }
 
-                public async void Logout()
+                public async Task Logout()
                 {
                     await repository.Logout();
                     IsLoggedIn = repository.IsLoggedIn;

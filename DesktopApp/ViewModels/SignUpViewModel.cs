@@ -57,13 +57,20 @@ public class SignUpViewModel
         _email = string.Empty;
         _authService = authService;
         _logger = logger;
-        SignUpCommand = new RelayCommand(OnSignUp);
+        SignUpCommand = new AsyncRelayCommand(OnSignUp);
     }
     
-    private void OnSignUp()
+    private async Task OnSignUp()
     {
-        _authService.Register(Email, Password);
-        _logger.LogInformation("User registered with username: {Username}", Username);  
+        try
+        {
+            await _authService.Register(Email, Password);
+            _logger.LogInformation("User registered with username: {Username}", Username);  
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, e.Message);
+        }
     }
     
     protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)

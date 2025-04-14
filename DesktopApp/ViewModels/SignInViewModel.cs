@@ -44,12 +44,19 @@ public class SignInViewModel
         _password = string.Empty;
         _authService = authService;
         _logger = logger;
-        SignInCommand = new RelayCommand(OnSignIn);
+        SignInCommand = new AsyncRelayCommand(OnSignIn);
     }
     
-    private void OnSignIn()
+    private async Task OnSignIn()
     {
-        _authService.Login(Username, Password);
+        try
+        {
+            await _authService.Login(Username, Password);
+        }
+        catch (Exception e)
+        {
+           _logger.LogError(e, e.Message);
+        }
     }
     
     protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)

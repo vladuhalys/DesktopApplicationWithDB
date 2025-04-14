@@ -20,12 +20,20 @@ public class HomeViewModel
         _navigationService = navigationService;
         _authService = authService;
         _logger = logger;
-        LogoutCommand = new RelayCommand(OnLogout);
+        LogoutCommand = new AsyncRelayCommand(OnLogout);
     }
     
-    private void OnLogout()
+    private async Task OnLogout()
     {
-        _authService.Logout();
+        try
+        {
+            _logger.LogInformation("Logging out...");
+            await _authService.Logout();
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, e.Message);
+        }
     }
     
     protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
