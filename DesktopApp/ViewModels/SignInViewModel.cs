@@ -1,6 +1,8 @@
-﻿using System.Windows.Forms;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
+using DesktopApp.Services;
 using Microsoft.Extensions.Logging;
 
 namespace DesktopApp.ViewModels;
@@ -9,18 +11,49 @@ public class SignInViewModel
 {
     public ICommand SignInCommand { get; }
     private readonly ILogger<SignInViewModel> _logger;
+    private readonly AuthService _authService;
+    public event PropertyChangedEventHandler? PropertyChanged;
+    private readonly NavigationService _navigationService;
     
-    public SignInViewModel(ILogger<SignInViewModel> logger)
+    private string _username;
+    public string Username
     {
-        _logger = logger;
-        SignInCommand = new AsyncRelayCommand(OnSignIn);
+        get => _username;
+        set
+        {
+            _username = value;
+            OnPropertyChanged();
+        }
+    }
+
+    private string _password;
+    public string Password
+    {
+        get => _password;
+        set
+        {
+            _password = value;
+            OnPropertyChanged();
+        }
     }
     
-    private Task OnSignIn()
+    public SignInViewModel(ILogger<SignInViewModel> logger, AuthService authService, NavigationService navigationService)
     {
-        //TODO: Implement the sign-in logic here
-        MessageBox.Show("Sign-in logic not implemented yet.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        _logger.LogInformation($"SignInCommand executed [{DateTime.Now.ToLocalTime()}]");
-        return Task.CompletedTask;
+        _navigationService = navigationService;
+        _username = string.Empty;
+        _password = string.Empty;
+        _authService = authService;
+        _logger = logger;
+        SignInCommand = new RelayCommand(OnSignIn);
+    }
+    
+    private void OnSignIn()
+    {
+        _authService.Login(Username, Password);
+    }
+    
+    protected void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }

@@ -1,22 +1,25 @@
-﻿namespace DesktopApplication.Repository;
+﻿using Supabase.Gotrue;
+
+namespace DesktopApplication.Repository;
 
 public partial class SupabaseRepository
 {
-    public bool Login(string username, string password)
+    public bool IsLoggedIn
     {
-        // Implement login logic here
-        return true;
+        get => CloudeDatabase?.SupabeseClient.Auth.CurrentSession != null;
+    }
+    public async Task Login(string username, string password)
+    {
+        await CloudeDatabase?.SupabeseClient.Auth.SignIn(username, password)!;
     }
     
-    public bool Register(string username, string password)
+    public async Task<bool> Register(string username, string password)
     {
-        // Implement registration logic here
-        return true;
+        throw new NotImplementedException();
     }
     
-    public bool Logout()
+    public async Task Logout()
     {
-        // Implement logout logic here
-        return true;
+        await CloudeDatabase?.SupabeseClient.Auth.SignOut()!;
     }
 }

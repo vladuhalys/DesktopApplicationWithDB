@@ -8,7 +8,7 @@
     <Grid>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" Margin="20">HOME</TextBlock>
-            <Button Click="OnLogoutClick">Logout</Button>
+            <Button Command="{Binding LogoutCommand}">Logout</Button>
         </StackPanel>
     </Grid>
 </UserControl>

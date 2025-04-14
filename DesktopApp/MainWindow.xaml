@@ -7,5 +7,5 @@
         xmlns:local="clr-namespace:DesktopApp"
         mc:Ignorable="d"
         Title="Desktop Application" Icon="Assets/Icons/logo.ico"
-        MinHeight="700" MinWidth="1100" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        MinHeight="700" MinWidth="1100" WindowState="Maximized" WindowStartupLocation="CenterScreen" Loaded="MainWindow_OnLoaded">
 </Window>

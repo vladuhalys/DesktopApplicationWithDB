@@ -1,9 +1,9 @@
 ﻿using System.Windows;
-using DesktopApp.Interfaces;
 using DesktopApp.Services;
 using DesktopApp.ViewModels;
 using DesktopApp.Views;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace DesktopApp;
 
@@ -33,19 +33,53 @@ public partial class App : Application
         
         // Register NavigationService
         services.AddSingleton<NavigationService>();
+        
+        // Register SupabaseService
+        services.AddSingleton<SupabaseService>();
+        services.AddSingleton<AuthService>(sp =>
+        {
+            var supabaseService = sp.GetRequiredService<SupabaseService>();
+            return new AuthService(supabaseService.SupabaseRepository);
+        });
+        
 
         // Register ViewModels
-        services.AddSingleton<SignInViewModel>();
+        services.AddSingleton<SignInViewModel>(
+            sp => new SignInViewModel(
+                authService: sp.GetRequiredService<AuthService>(),
+                navigationService: sp.GetRequiredService<NavigationService>(),
+                logger: sp.GetRequiredService<ILogger<SignInViewModel>>()
+                ));
+            
+            
         services.AddSingleton<SignUpViewModel>();
-        services.AddSingleton<HomeViewModel>();
+        services.AddSingleton<HomeViewModel>(
+            sp => new HomeViewModel(
+                authService: sp.GetRequiredService<AuthService>(),
+                navigationService: sp.GetRequiredService<NavigationService>(),
+                logger: sp.GetRequiredService<ILogger<HomeViewModel>>()
+            ));
 
         // Register Views
-        services.AddSingleton<SignInPage>();
+        services.AddSingleton<SignInPage>(
+            sp => new SignInPage(
+                navigationService: sp.GetRequiredService<NavigationService>(),
+                viewModel: sp.GetRequiredService<SignInViewModel>()
+                ));
         services.AddSingleton<SignUpPage>();
-        services.AddSingleton<HomePage>();
+        services.AddSingleton<HomePage>(
+            sp => new HomePage(
+                navigationService: sp.GetRequiredService<NavigationService>(),
+                viewModel: sp.GetRequiredService<HomeViewModel>()
+                ));
 
         // Register MainWindow
-        services.AddSingleton<MainWindow>();
+        services.AddSingleton<MainWindow>(sp =>
+        {
+            var navigationService = sp.GetRequiredService<NavigationService>();
+            var authService = sp.GetRequiredService<AuthService>();
+            return new MainWindow(navigationService, authService);
+        });
     }
 
     private void OnExit(object sender, ExitEventArgs e)

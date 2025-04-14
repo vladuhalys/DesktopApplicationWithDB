@@ -1,35 +1,49 @@
-﻿using DesktopApp.Interfaces;
-using Microsoft.Extensions.Logging;
+﻿using System.ComponentModel;
+        using System.Runtime.CompilerServices;
+        using DesktopApplication.Repository;
+        
+        namespace DesktopApp.Services
+        {
+            public class AuthService(SupabaseRepository repository) : INotifyPropertyChanged
+            {
+                private bool _isLoggedIn = repository.IsLoggedIn;
+        
+                public event PropertyChangedEventHandler? PropertyChanged;
 
-namespace DesktopApp.Services;
+                public bool IsLoggedIn
+                {
+                    get => _isLoggedIn;
+                    set
+                    {
+                        if (_isLoggedIn != value)
+                        {
+                            _isLoggedIn = value;
+                            OnPropertyChanged("IsLoggedIn");
+                        }
+                    }
+                }
+        
+                // Login method that updates IsLoggedIn
+                public async void Login(string email, string password)
+                {
+                    await repository.Login(email, password);
+                    IsLoggedIn = repository.IsLoggedIn;
+                }
 
-public class AuthService : IAuthService
-{
-    private readonly ILogger<AuthService> _logger;
-    private readonly ISupabaseService _supabaseServiceImplementation;
+                public Task<bool> Register(string username, string password)
+                {
+                    throw new NotImplementedException();
+                }
 
-    public AuthService(ILogger<AuthService> logger, ISupabaseService supabaseService)
-    {
-        _supabaseServiceImplementation = supabaseService;
-        _logger = logger;
-        _logger.LogInformation("AuthService initialized");
-    }
+                public async void Logout()
+                {
+                    await repository.Logout();
+                    IsLoggedIn = repository.IsLoggedIn;
+                }
 
-    public bool Login(string username, string password)
-    {
-        _logger.LogInformation("Logging in user: {Username}", username);
-         return _supabaseServiceImplementation.SupabaseRepository.Login(username, password);
-    }
-
-    public bool Register(string username, string password)
-    {
-        _logger.LogInformation("Register user: {Username}", username);
-        return _supabaseServiceImplementation.SupabaseRepository.Register(username, password);
-    }
-
-    public bool Logout()
-    {
-        _logger.LogInformation($"Logging out {DateTime.Now.ToLocalTime()}");
-        return _supabaseServiceImplementation.SupabaseRepository.Logout();
-    }
-}
+                protected virtual void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+                }
+            }
+        }

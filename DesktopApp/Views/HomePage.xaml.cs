@@ -1,18 +1,16 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using DesktopApp.Interfaces;
+using DesktopApp.ViewModels;
 
 namespace DesktopApp.Views;
 
 public partial class HomePage : UserControl
 {
-    public HomePage()
+    private readonly NavigationService _navigationService;
+    public HomePage(NavigationService navigationService, HomeViewModel viewModel)
     {
         InitializeComponent();
-    }
-
-    private void OnLogoutClick(object sender, RoutedEventArgs e)
-    {
-        throw new NotImplementedException();
+        DataContext = viewModel;
+        _navigationService = navigationService;
     }
 }

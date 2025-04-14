@@ -10,8 +10,11 @@ public class JsonRepository(string filePath)
     {
         try
         {
-            using StreamReader reader = new StreamReader(FilePath);
-            string json = await reader.ReadToEndAsync();
+            if (!File.Exists(filePath))
+            {
+                throw new FileNotFoundException("File not found", filePath);
+            }
+            string json = File.ReadAllText(filePath);
             var model = JsonConvert.DeserializeObject<SupabaseConfigsModel>(json);
             return model;
         }

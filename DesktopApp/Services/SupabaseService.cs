@@ -1,9 +1,8 @@
-﻿using DesktopApp.Interfaces;
-using DesktopApplication.Repository;
+﻿using DesktopApplication.Repository;
 
 namespace DesktopApp.Services;
 
-public class SupabaseService : ISupabaseService
+public class SupabaseService
 {
     public SupabaseRepository SupabaseRepository { get; set; }
     

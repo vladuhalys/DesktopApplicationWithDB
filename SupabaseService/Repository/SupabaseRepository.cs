@@ -9,7 +9,10 @@ public partial class SupabaseRepository
     
     public SupabaseRepository()
     {
-        const string filePath = @"../.env/supabase_keys.json";
+        //Get solution directory
+        string solutionDirectory = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, @"..\..\..\..\"));
+        //Get file path
+        string filePath = solutionDirectory + @"SupabaseService\.env\supabase_keys.json";
         try
         {
             if (string.IsNullOrEmpty(filePath))
