@@ -3,8 +3,8 @@
 public class ListOfBooks
 {
     public int Count { get; set; }
-    public int? Next { get; set; }
-    public int? Previous { get; set; }
+    public string? Next { get; set; }
+    public string? Previous { get; set; }
     public List<Book> Results { get; set; }
     
     public ListOfBooks()
@@ -20,17 +20,17 @@ public class ListOfBooks
         Count = count;
     }
     
-    public ListOfBooks(int count, int? next) : this(count)
+    public ListOfBooks(int count, string? next) : this(count)
     {
         Next = next;
     }
     
-    public ListOfBooks(int count, int? next, int? previous) : this(count, next)
+    public ListOfBooks(int count, string? next, string? previous) : this(count, next)
     {
         Previous = previous;
     }
     
-    public ListOfBooks(int count, int? next, int? previous, List<Book> results) : this(count, next, previous)
+    public ListOfBooks(int count, string? next, string? previous, List<Book> results) : this(count, next, previous)
     {
         Results = results;
     }
