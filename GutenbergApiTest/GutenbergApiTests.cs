@@ -36,7 +36,7 @@ namespace GutenbergApiTest
                 var apiService = new ApiService(httpClient);
     
                 // Act
-                var result = await apiService.GetAllBooks();
+                var result = await apiService.GetAllBooks(1);
     
                 // Assert
                 Assert.IsNotNull(result);
@@ -63,7 +63,7 @@ namespace GutenbergApiTest
                 var apiService = new ApiService(httpClient);
     
                 // Act & Assert
-                var ex = Assert.ThrowsAsync<Exception>(async () => await apiService.GetAllBooks());
+                var ex = Assert.ThrowsAsync<Exception>(async () => await apiService.GetAllBooks(1));
                 Assert.That(ex.Message, Does.Contain("Status code"));
             }
         }

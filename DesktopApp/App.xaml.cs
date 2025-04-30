@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using System.Net.Http;
+using System.Windows;
 using DesktopApp.Services;
 using DesktopApp.ViewModels;
 using DesktopApp.Views;
+using GutenbergApi.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -41,6 +43,8 @@ public partial class App : Application
             var supabaseService = sp.GetRequiredService<SupabaseService>();
             return new AuthService(supabaseService.SupabaseRepository);
         });
+        // Register HttpClient
+        services.AddSingleton<ApiService>(sp => new ApiService(new HttpClient()));
         
 
         // Register ViewModels
@@ -57,7 +61,8 @@ public partial class App : Application
             sp => new HomeViewModel(
                 authService: sp.GetRequiredService<AuthService>(),
                 navigationService: sp.GetRequiredService<NavigationService>(),
-                logger: sp.GetRequiredService<ILogger<HomeViewModel>>()
+                logger: sp.GetRequiredService<ILogger<HomeViewModel>>(),
+                apiService: sp.GetRequiredService<ApiService>()
             ));
 
         // Register Views

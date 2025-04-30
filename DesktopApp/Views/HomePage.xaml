@@ -3,12 +3,129 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
              MinHeight="450" MinWidth="800">
     <Grid>
-        <StackPanel Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center" Margin="20">HOME</TextBlock>
-            <Button Command="{Binding LogoutCommand}">Logout</Button>
+         <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True"
+    SnapsToDevicePixels="True"
+    Style="{StaticResource MaterialDesignNavigationRailTabControl}"
+    TabStripPlacement="Left">
+    <TabItem>
+      <TabItem.Header>
+        <StackPanel
+          Width="auto"
+          Height="auto">
+          <materialDesign:PackIcon
+            Width="24"
+            Height="24"
+            HorizontalAlignment="Center"
+            Kind="Book"/>
+          <TextBlock
+            HorizontalAlignment="Center"
+            Text="Books" />
         </StackPanel>
+      </TabItem.Header>
+      <Grid
+        Margin="16">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="Auto"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock
+          Margin="0,0,0,8"
+          Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+          Text="All Books"/>
+        
+        <ListView Grid.Row="1" x:Name ="BooksListView"
+          Style="{StaticResource MaterialDesignListView}">
+          <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+              <UniformGrid Columns="2" VerticalAlignment="Stretch"/>
+            </ItemsPanelTemplate>
+          </ItemsControl.ItemsPanel>
+          <ListView.ItemTemplate>
+            <DataTemplate>
+              <StackPanel Orientation="Vertical" VerticalAlignment="Stretch">
+                <Image Source="{Binding CoverImage}" VerticalAlignment="Top" Stretch="UniformToFill" />
+                <TextBlock Text="{Binding Title}" VerticalAlignment="Bottom" />
+              </StackPanel>
+            </DataTemplate>
+          </ListView.ItemTemplate>
+        </ListView>
+      </Grid>
+    </TabItem>
+    <TabItem>
+      <TabItem.Header>
+        <StackPanel
+          Width="auto"
+          Height="auto">
+          <materialDesign:PackIcon
+            Width="24"
+            Height="24"
+            HorizontalAlignment="Center"
+            Kind="ClockOutline" />
+          <TextBlock
+            HorizontalAlignment="Center"
+            Text="Recent" />
+        </StackPanel>
+      </TabItem.Header>
+      <StackPanel
+        Margin="16">
+        <TextBlock
+          Margin="0,0,0,8"
+          Style="{StaticResource MaterialDesignHeadline5TextBlock}"
+          Text="Recent" />
+        <TextBlock>
+          <Run
+            Text="tab 2 content. Default look and behaviors." />
+          <LineBreak />
+          <LineBreak />
+          <Run
+            FontStyle="Italic">
+          Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+        </Run>
+        </TextBlock>
+      </StackPanel>
+    </TabItem>
+    <TabItem>
+      <TabItem.Header>
+        <StackPanel
+          Width="auto"
+          Height="auto">
+          <materialDesign:PackIcon
+            Width="24"
+            Height="24"
+            HorizontalAlignment="Center"
+            Kind="BookAccount" />
+          <TextBlock
+            HorizontalAlignment="Center"
+            Text="Saved" />
+        </StackPanel>
+      </TabItem.Header>
+      <StackPanel Margin="16">
+       
+      </StackPanel>
+    </TabItem>
+    <TabItem>
+      <TabItem.Header>
+        <StackPanel
+          Width="auto"
+          Height="auto">
+          <materialDesign:PackIcon
+            Width="24"
+            Height="24"
+            HorizontalAlignment="Center"
+            Kind="Cog" />
+          <TextBlock
+            HorizontalAlignment="Center"
+            Text="Settings" />
+        </StackPanel>
+      </TabItem.Header>
+      <StackPanel Margin="16">
+        <Button Grid.Column="1" Grid.Row="0" Command="{Binding LogoutCommand}" Content="Logout" Margin="10"/>
+      </StackPanel>
+    </TabItem>
+  </TabControl>
     </Grid>
 </UserControl>

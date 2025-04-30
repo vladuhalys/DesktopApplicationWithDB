@@ -3,5 +3,5 @@
 public abstract class UrlService
 {
     public static readonly string BaseUrl = "https://gutendex.com";
-    public static string ListOfBooks = "/books";
+    public static string ListOfBooksByPage(int page) => $"/books/?page={page}";
 }

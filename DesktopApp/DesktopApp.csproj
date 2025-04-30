@@ -52,6 +52,8 @@
       <Resource Include="Assets\Fonts\Poppins\Poppins-Thin.ttf" />
       <None Remove="Assets\Fonts\Poppins\Poppins-ThinItalic.ttf" />
       <Resource Include="Assets\Fonts\Poppins\Poppins-ThinItalic.ttf" />
+      <None Remove="Assets\Images\PlaceholderBook.png" />
+      <Resource Include="Assets\Images\PlaceholderBook.png" />
     </ItemGroup>
 
     <ItemGroup>
@@ -70,6 +72,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\GutenbergApi\GutenbergApi.csproj" />
       <ProjectReference Include="..\SupabaseService\SupabaseService.csproj" />
     </ItemGroup>
 

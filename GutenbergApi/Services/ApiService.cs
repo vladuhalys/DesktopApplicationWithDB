@@ -13,11 +13,11 @@ public class ApiService
         Client.BaseAddress = new Uri(UrlService.BaseUrl);
     }
 
-    public async Task<ListOfBooks> GetAllBooks()
+    public async Task<ListOfBooks> GetAllBooks(int page)
     {
         try
         {
-            var response =  await Client.GetAsync(UrlService.ListOfBooks);
+            var response =  await Client.GetAsync(UrlService.ListOfBooksByPage(page));
             if (!response.IsSuccessStatusCode)
             {
                 throw new Exception($"Api error: Status code {response.StatusCode}");
